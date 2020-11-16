@@ -1,7 +1,8 @@
-import React from 'react';
+import styled from 'styled-components';
 
-function Title({ children }) {
-    return <h1>{children}</h1>
-}
+const Title = styled.h1`
+    color: #4848BB;
+    font-size:25px;
+`;
 
 export default Title;
