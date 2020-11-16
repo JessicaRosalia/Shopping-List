@@ -4,7 +4,7 @@ import Title from './components/Title';
 function App() {
   return (
     <>
-      <Title> Your Shopping List </Title>
+      <Title> Your Shopping Lisssst </Title>
     </>
   );
 }
