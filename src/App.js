@@ -1,14 +1,16 @@
 import React from 'react';
-import FormAddItem from './components/FormAddItem';
-import Title from './components/Title';
+import { FormAddItem, LabelField, SearchField, TitleForm, ButtonAdd } from './components/FormAddItem';
 import Main from './components/Main';
 
 function App() {
   return (
     <Main>
-      <Title> Your Shopping List </Title>
-
-      <FormAddItem />
+      <FormAddItem >
+        <TitleForm> Your Shopping List </TitleForm>
+        <LabelField> Add new Item:</LabelField>
+        <SearchField />
+        <ButtonAdd>Adicionar</ButtonAdd>
+      </FormAddItem>
     </Main>
   );
 }

@@ -6,6 +6,10 @@ const Reset = createGlobalStyle`
    License: none (public domain)
 */
 
+*{
+	box-sizing: border-box;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -32,6 +36,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	box-sizing: border-box;
 	line-height: 1;
 }
 ol, ul {
