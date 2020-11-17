@@ -1,11 +1,15 @@
 import React from 'react';
+import FormAddItem from './components/FormAddItem';
 import Title from './components/Title';
+import Main from './components/Main';
 
 function App() {
   return (
-    <>
-      <Title> Your Shopping Lisssst </Title>
-    </>
+    <Main>
+      <Title> Your Shopping List </Title>
+
+      <FormAddItem />
+    </Main>
   );
 }
 
