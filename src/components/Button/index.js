@@ -1,10 +1,7 @@
-import styled from 'styled-components';
+import "./style.css";
 
-const Button = styled.button`
-    height:45px;
-    width:115px;
-    margin-top:15px;
-    border: none;
-`;
+export function Button(props) {
+    const { value, onClick } = props;
 
-export default Button;
+    return <button className="btn" onClick={onClick}>{value}</button>
+}
