@@ -1,8 +1,4 @@
-import { Button } from './Button';
-import { TextField } from './TextField';
 import { TitleForm } from './TitleForm';
-import { LabelField } from './LabelField';
-
 
 /*export const FormAddItem = styled(Box).attrs({ as: 'form' })`
     width:50vw;
@@ -13,14 +9,17 @@ import { LabelField } from './LabelField';
 `;
 */
 import './style.css'
+import { Add } from './AddSection';
+import { Remove } from './RemoveSection';
 
-function FormItem({ addItem, onChange, value }) {
-    return <div className="formItem">
-        <TitleForm value="Your Shopping List" />
-        <LabelField value="Add new Item:" />
-        <TextField value={value} placeholder=" Milk" onChange={onChange} />
-        <Button value="Add" onClick={addItem} />
-    </div>
+function FormItem({ onChangeAdd, onChangeRemove, addItem, removeItem, valueAdd, valueRemove }) {
+    return (
+        <div className="formItem">
+            <TitleForm value="Your Shopping List" />
+            <Add value={valueAdd} onChangeAdd={onChangeAdd} addItem={addItem} />
+            <Remove value={valueRemove} onChangeRemove={onChangeRemove} removeItem={removeItem} />
+        </div>
+    )
 }
 
 export default FormItem;
