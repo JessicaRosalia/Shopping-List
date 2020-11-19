@@ -22,12 +22,22 @@ function App() {
   }
 
   function removeItem() {
-    setItems("")
-    items.filter((item) => {
-      if (item === name) {
-        return "Ok"
+
+    var aux;
+    const ArrayAux = items
+    ArrayAux.map(item => {
+      if (item === nameR) {
+        aux = item
+        console.log("removido:" + aux)
       }
+      return aux
     })
+
+    ArrayAux.splice(ArrayAux.indexOf(aux), 1)
+    setNameR([...ArrayAux])
+    setNameR("")
+    console.log(nameR)
+    console.log(items)
 
   }
 

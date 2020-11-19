@@ -1,7 +1,7 @@
 import { Button } from '../../Button'
 import { LabelField } from '../LabelField'
 import { TextField } from '../TextField'
-import './style.css'
+
 
 export function Remove({ value, onChangeRemove, removeItem }) {
     return (
