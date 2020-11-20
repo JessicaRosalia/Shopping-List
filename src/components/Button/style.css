@@ -1,6 +1,6 @@
 .button{
     background: (255,255,255,0.8);
-    color:#F4F4F4;
+    color:#000;
     margin-bottom:50px;
     width: 115px;
     height:35px;
@@ -11,9 +11,11 @@
 }
 
 .add{
+    color:#F4F4F4;
     background-color: #82C762;
 }
 
 .remove{
+    color:#F4F4F4;
     background-color: #EB5939;
 }

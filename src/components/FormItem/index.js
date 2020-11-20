@@ -11,11 +11,12 @@ import { TitleForm } from './TitleForm';
 import './style.css'
 import { Add } from './AddSection';
 import { Remove } from './RemoveSection';
+import Title from '../Title';
 
 function FormItem({ onChangeAdd, onChangeRemove, addItem, removeItem, valueAdd, valueRemove }) {
     return (
         <div className="formItem">
-            <TitleForm value="Your Shopping List" />
+            <Title color="#f00" value="Your Shopping List" >Your Shopping List</Title>
             <Add value={valueAdd} onChangeAdd={onChangeAdd} addItem={addItem} />
             <Remove value={valueRemove} onChangeRemove={onChangeRemove} removeItem={removeItem} />
         </div>

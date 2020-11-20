@@ -1,12 +1,12 @@
-import { TitleListing } from './TitleListing';
 import './style.css'
 import List from './List';
 import SearchItem from './SearchItem';
+import Title from '../Title';
 
 function Listing({ onChange, searchItem, items = [] }) {
     return (
         <div className="listing">
-            <TitleListing value="Listing" />
+            <Title value="Listing" />
             <List items={items} />
             <SearchItem onChange={onChange} searchItem={searchItem} />
         </div>
