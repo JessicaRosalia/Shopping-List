@@ -12,15 +12,11 @@ function App() {
 
   function addItem() {
     console.log(items);
-    items.filter((item) => {
-      if (item !== name.trim() && name !== "") {
-        setItems([...items, name]);
-        setName("")
-      } else if (item === name.trim()) {
-        setItems([...items])
-      }
-      return;
-    })
+    items.filter((item) => (
+      // let FormatedName = name.trim()
+      (item !== name && name !== "") && (setItems([...items, name.trim()]),setName("")
+      ))
+    )
   }
 
   function removeItem() {
@@ -71,6 +67,7 @@ function App() {
     <Main>
       <FormItem onChangeAdd={onChangeAdd} onChangeRemove={onChangeRemove} valueAdd={name} valueRemove={nameR} addItem={addItem} removeItem={removeItem} />
       <Listing onChange={onChange} searchItem={searchItem} items={items} />
+
     </Main>
   );
 }
