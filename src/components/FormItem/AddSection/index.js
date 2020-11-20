@@ -1,6 +1,6 @@
 import { Button } from "../../Button";
 import { LabelField } from "../LabelField";
-import { TextField } from "../TextField";
+import { TextField } from "../../TextField";
 
 export function Add({ value, onChangeAdd, addItem }) {
     return (

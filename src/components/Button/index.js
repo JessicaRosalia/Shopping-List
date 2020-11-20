@@ -7,5 +7,7 @@ export function Button(props) {
         return <button onClick={onClick} className="button add">{value}</button>
     } else if (value === "Remove") {
         return <button onClick={onClick} className="button remove">{value}</button>
+    } else {
+        return <button onClick={onClick} className="button">{value}</button>
     }
 }
