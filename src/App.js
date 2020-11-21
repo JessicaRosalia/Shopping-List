@@ -14,9 +14,9 @@ function App() {
     console.log(items);
     items.filter((item) => (
       // let FormatedName = name.trim()
-      (item !== name && name !== "") && (setItems([...items, name.trim()]),setName("")
-      ))
-    )
+      (item !== name && name !== "") && (setItems([...items, name.trim(), setName("")])
+      )
+    ))
   }
 
   function removeItem() {

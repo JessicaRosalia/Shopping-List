@@ -6,19 +6,21 @@ const GenericText = css`
 
 const TitleStyle = styled.h1`
     font-size:25px;
-    ${GenericText}
+    font-weight: bold;
+    ${GenericText};
+    font-family: 'Helvetica';
 `;
 
 const TextStyle = styled.p`
     ${GenericText}
     font-size:19px;
-    font-weight: bold;
+    font-style: italic;
 `;
 
-function Title({ value, color, type = "text" }) {
+function Title({ value, color, type }) {
     const TYPES = {
-        title: <TitleStyle color={color} > {value} </TitleStyle>,
-        text: <TextStyle color={color} >{value}</TextStyle>
+        title: <TitleStyle type={type} color="rgb(0,0,115)" > {value} </TitleStyle>,
+        text: <TextStyle color={color} type={type}>{value}</TextStyle>
     };
     return (
         TYPES[type]

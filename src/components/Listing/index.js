@@ -6,7 +6,7 @@ import Title from '../Title';
 function Listing({ onChange, searchItem, items = [] }) {
     return (
         <div className="listing">
-            <Title value="Listing" />
+            <Title type="title" value="Listing" />
             <List items={items} />
             <SearchItem onChange={onChange} searchItem={searchItem} />
         </div>

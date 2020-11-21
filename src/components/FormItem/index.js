@@ -16,7 +16,7 @@ import Title from '../Title';
 function FormItem({ onChangeAdd, onChangeRemove, addItem, removeItem, valueAdd, valueRemove }) {
     return (
         <div className="formItem">
-            <Title color="#f00" value="Your Shopping List" >Your Shopping List</Title>
+            <Title type="title" value="Your Shopping List" />
             <Add value={valueAdd} onChangeAdd={onChangeAdd} addItem={addItem} />
             <Remove value={valueRemove} onChangeRemove={onChangeRemove} removeItem={removeItem} />
         </div>
