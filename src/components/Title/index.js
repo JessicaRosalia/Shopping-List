@@ -9,6 +9,7 @@ const TitleStyle = styled.h1`
     font-weight: bold;
     ${GenericText};
     font-family: 'Helvetica';
+    margin-bottom:10px;
 `;
 
 const TextStyle = styled.p`
