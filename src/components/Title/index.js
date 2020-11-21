@@ -19,7 +19,7 @@ const TextStyle = styled.p`
 
 function Title({ value, color, type }) {
     const TYPES = {
-        title: <TitleStyle type={type} color="rgb(0,0,115)" > {value} </TitleStyle>,
+        title: <TitleStyle type={type} color="#fff" > {value} </TitleStyle>,
         text: <TextStyle color={color} type={type}>{value}</TextStyle>
     };
     return (
