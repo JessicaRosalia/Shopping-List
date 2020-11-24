@@ -1,76 +1,82 @@
-import React, { useState } from 'react';
-import Main from './components/Main';
-import Listing from './components/Listing';
-import SearchResult from './components/Listing/SearchResult';
-import FormItem from './components/FormItem';
+import React, { useState } from "react";
+import Main from "./components/Main";
+import Listing from "./components/Listing";
+import SearchResult from "./components/Listing/SearchResult";
+import FormItem from "./components/FormItem";
 
 function App() {
-
-  const [items, setItems] = useState(["Arroz", "Farinha", "Macarrão", "Vinagre", "Tomate", "Papel Toalha"]);
-  const [name, setName] = useState("");
-  const [nameR, setNameR] = useState("");
-  const [nameS, setNameS] = useState("");
+  const [items, setItems] = useState([
+    "Arroz",
+    "Farinha",
+    "Macarrão",
+    "Vinagre",
+    "Tomate",
+    "Papel Toalha",
+  ]);
+  const [newItemName, setNewItemName] = useState("");
+  const [removeItemName, setRemoveItemName] = useState("");
+  const [searchName, setSearchName] = useState("");
+  const [searchResult, setSearchResult] = useState("");
 
   function addItem() {
     console.log(items);
-    items.filter((item) => (
-      // let FormatedName = name.trim()
-      (item !== name && name !== "") && (setItems([...items, name.trim(), setName("")])
-      )
-    ))
+    items.filter(
+      (item) =>
+        // let FormatedName = name.trim()
+        item !== newItemName &&
+        newItemName !== "" &&
+        setItems([...items, newItemName.trim(), setNewItemName("")])
+    );
   }
 
   function removeItem() {
-    var aux;
-    const ArrayAux = items
-    ArrayAux.map(item => {
-      if (item === nameR) {
-        aux = item
-        console.log("removido:" + aux)
-        // return aux
-        ArrayAux.splice(ArrayAux.indexOf(aux), 1)
-        setNameR([...ArrayAux])
-        setNameR("")
-      }
-      return;
-    })
+    const itemsRest = items.filter((item) => item != removeItemName);
+    setItems(itemsRest);
 
-    console.log(nameR)
-    console.log(items)
+    setRemoveItemName("");
 
+    // console.log(removeItemName);
+    // console.log(items);
   }
 
-  const [b,setB] = useState([...nameS]);
-
   function searchItem() {
-    items.filter(item => {
-      if (item === nameS) {
-        console.log("achado o item " + item)
-        //setNameS("");
-        setNameS([...nameS,item])
-        setB([...nameS])
-      }
-    })
+    const itemFound = items.find((item) => item === searchName);
+    if (itemFound === undefined) {
+      setSearchResult("");
+    } else {
+      setSearchResult(itemFound);
+    }
   }
 
   function onChange(event) {
-    setNameS(event.target.value)
+    setSearchName(event.target.value);
   }
 
   function onChangeAdd(event) {
-    setName(event.target.value);
+    setNewItemName(event.target.value);
   }
 
   function onChangeRemove(event) {
-    setNameR(event.target.value);
+    setRemoveItemName(event.target.value);
   }
-
 
   return (
     <Main>
-      <FormItem onChangeAdd={onChangeAdd} onChangeRemove={onChangeRemove} valueAdd={name} valueRemove={nameR} addItem={addItem} removeItem={removeItem} />
+      <FormItem
+        onChangeAdd={onChangeAdd}
+        onChangeRemove={onChangeRemove}
+        valueAdd={newItemName}
+        valueRemove={removeItemName}
+        addItem={addItem}
+        removeItem={removeItem}
+      />
 
-      <Listing onChange={onChange} onClick={searchItem} items={items} item={b} />
+      <Listing
+        onChange={onChange}
+        onClick={searchItem}
+        items={items}
+        item={searchResult}
+      />
     </Main>
   );
 }
