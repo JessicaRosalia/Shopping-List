@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Main from './components/Main';
 import Listing from './components/Listing';
+import SearchResult from './components/Listing/SearchResult';
 import FormItem from './components/FormItem';
 
 function App() {
@@ -39,18 +40,21 @@ function App() {
 
   }
 
+  const [b,setB] = useState([...nameS]);
+
   function searchItem() {
     items.filter(item => {
       if (item === nameS) {
         console.log("achado o item " + item)
-        setNameS("")
+        //setNameS("");
+        setNameS([...nameS,item])
+        setB([...nameS])
       }
-      return;
     })
   }
 
   function onChange(event) {
-    setNameS(event.target.value);
+    setNameS(event.target.value)
   }
 
   function onChangeAdd(event) {
@@ -62,12 +66,11 @@ function App() {
   }
 
 
-
   return (
     <Main>
       <FormItem onChangeAdd={onChangeAdd} onChangeRemove={onChangeRemove} valueAdd={name} valueRemove={nameR} addItem={addItem} removeItem={removeItem} />
-      <Listing onChange={onChange} searchItem={searchItem} items={items} />
 
+      <Listing onChange={onChange} onClick={searchItem} items={items} item={b} />
     </Main>
   );
 }
